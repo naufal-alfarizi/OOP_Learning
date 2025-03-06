@@ -9,5 +9,5 @@ class Car:
         a = f"{self.brand} {self.model} is Car."
         return a
 
-my_car = Car("Toyota", "Corolla")
+my_car = Car("Toyota", "Agya")
 print(my_car.start())
