@@ -17,10 +17,10 @@ class Movie:
 
 # List of movies
 movies = [
-    Movie("Inception", 148, 10000, 100),
-    Movie("Interstellar", 169, 12000, 100),
-    Movie("The Dark Knight", 152, 15000, 100),
-    Movie("Tenet", 150, 10000, 100)
+    Movie("Agak Laen", 148, 10000, 100),
+    Movie("Pocong Mualaf", 169, 12000, 100),
+    Movie("Kunti bapak", 152, 15000, 100),
+    Movie("AADC", 150, 10000, 100)
 ]
 
 
