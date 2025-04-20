@@ -1,38 +1,36 @@
-from sympy import symbols, diff, integrate, limit, summation, product, oo, sin, cos, exp
+from sympy import symbols, Rational, Float, Integer, simplify, expand, evalf
 
-# Definisikan simbol variabel
-x, n = symbols('x n')
+# 1. Jenis number
+a = Integer(10)             # Bilangan bulat
+b = Rational(3, 4)         # Bilangan rasional
+c = Float(3.1415)          # Bilangan float
 
-# 1. Turunan dari f(x) = x**2 * sin(x)
-f = x**2 * sin(x)
-turunan_f = diff(f, x)
-print("Turunan dari f(x) = x^2 * sin(x):")
-print(turunan_f)
+print("Jenis Number:")
+print("Integer a:", a, type(a))
+print("Rational b:", b, type(b))
+print("Float c:", c, type(c))
 print()
 
-# 2. Integral dari f(x) = x * cos(x)
-g = x * cos(x)
-integral_g = integrate(g, x)
-print("Integral dari g(x) = x * cos(x):")
-print(integral_g)
+# 2. Ekspresi simbolik
+x, y = symbols('x y')
+expr = (x + y)**2
+
+print("Ekspresi simbolik:")
+print("Ekspresi: (x + y)^3 =", expr)
 print()
 
-# 3. Limit dari (sin(x)/x) saat x mendekati 0
-h = sin(x)/x
-limit_h = limit(h, x, 0)
-print("Limit dari sin(x)/x saat x -> 0:")
-print(limit_h)
+# 3. Ekspansi dan penyederhanaan ekspresi
+expanded_expr = expand(expr)
+simplified_expr = simplify(expanded_expr)
+
+print("Ekspresi setelah di-expand:")
+print(expanded_expr)
+print("Penyederhanaan dari ekspresi:")
+print(simplified_expr)
 print()
 
-# 4. Penjumlahan tak hingga dari 1/n^2 untuk n = 1 sampai tak hingga
-sum_expr = 5/n**2
-sum_result = summation(sum_expr, (n, 5, oo))
-print("Jumlah dari 1/n^2 dari n=1 hingga tak hingga:")
-print(sum_result)
-print()
-
-# 5. Perkalian tak hingga dari (1 + 1/n^2) untuk n = 1 sampai 5 (agar tidak terlalu berat dihitung)
-prod_expr = (5 + 5/n**2)
-prod_result = product(prod_expr, (n, 1, 5))
-print("Perkalian dari (1 + 1/n^2) dari n=1 sampai n=10:")
-print(prod_result)
+# 4. Evaluasi numerik
+numeric_expr = (Rational(1, 3) + Rational(2, 10))
+print("Evaluasi numerik dari 1/3 + 2/10:")
+print("Hasil simbolik:", numeric_expr)
+print("Hasil desimal:", numeric_expr.evalf())
